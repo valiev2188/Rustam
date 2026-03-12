@@ -134,13 +134,10 @@
         <div class="hero__image-ring hero__image-ring--outer"></div>
         <div class="hero__image-ring hero__image-ring--inner"></div>
         <div class="hero__image-frame">
-          <!-- Replace rustam.png with your actual photo -->
-          <img src="rustam.png" alt="Рустам — ментор по личному бренду" class="hero__photo"
-            onerror="this.parentElement.classList.add('no-photo')" />
-          <div class="hero__photo-placeholder">
-            <span class="ph-letter">R</span>
-            <p data-i18n="photo_hint">Добавьте<br />ваше фото</p>
-          </div>
+          <!-- Dark theme: black image -->
+          <img src="black_image.webp" alt="Рустам" class="hero__photo hero__photo--dark" />
+          <!-- Light theme: white image -->
+          <img src="white_image.webp" alt="Рустам" class="hero__photo hero__photo--light" />
         </div>
         <div class="hero__image-badge">
           <span class="badge-dot"></span>
@@ -312,8 +309,9 @@
       <div class="authority__grid">
         <div class="authority__image-wrap fade-up">
           <div class="authority__image-glow"></div>
-          <div class="authority__image-placeholder">
-            <div class="portrait-letter">R</div>
+          <div class="authority__image-frame">
+            <img src="black_image.webp" alt="Рустам" class="authority__photo authority__photo--dark" />
+            <img src="white_image.webp" alt="Рустам" class="authority__photo authority__photo--light" />
             <div class="portrait-ring"></div>
             <div class="portrait-ring portrait-ring--2"></div>
           </div>

@@ -847,7 +847,25 @@ ul {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: top center
+  object-position: top center;
+  transition: opacity 0.35s ease
+}
+
+/* Theme-based photo switching */
+.hero__photo--dark {
+  display: block
+}
+
+.hero__photo--light {
+  display: none
+}
+
+[data-theme="light"] .hero__photo--dark {
+  display: none
+}
+
+[data-theme="light"] .hero__photo--light {
+  display: block
 }
 
 /* Placeholder shown only when image fails */
@@ -1341,6 +1359,42 @@ ul {
   height: 180px;
   animation: spinRing 8s linear infinite reverse;
   border-color: rgba(229, 9, 20, 0.12)
+}
+
+/* Authority image frame (real photos) */
+.authority__image-frame {
+  width: 300px;
+  height: 380px;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid var(--border-red);
+  box-shadow: 0 0 60px var(--red-glow-sm);
+  position: relative;
+}
+
+.authority__photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  transition: opacity 0.35s ease;
+}
+
+/* Theme-based photo switching for authority section */
+.authority__photo--dark {
+  display: block
+}
+
+.authority__photo--light {
+  display: none
+}
+
+[data-theme="light"] .authority__photo--dark {
+  display: none
+}
+
+[data-theme="light"] .authority__photo--light {
+  display: block
 }
 
 .authority__badge-float {
