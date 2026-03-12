@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="dark" data-lang="ru">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Рустам — Менторство по личному бренду</title>
+  <meta name="description"
+    content="Я помогу вам превратить экспертизу в личный бренд, который привлекает клиентов и создаёт авторитет. 2-месячное интенсивное менторство." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+
+  <!-- PUSH NOTIFICATION -->
+  <div class="push-toast" id="pushToast">
+    <div class="push-toast__icon">🔥</div>
+    <div class="push-toast__text">
+      <strong data-i18n="push_title">Мало мест осталось!</strong>
+      <span data-i18n="push_sub">Только 3 свободных места в следующем потоке</span>
+    </div>
+    <button class="push-toast__close" id="pushClose">✕</button>
+  </div>
+
+  <!-- NAV -->
+  <nav class="nav" id="nav">
+    <div class="nav__inner container">
+      <div class="nav__logo"><span class="logo-r">R</span>USTAM</div>
+      <ul class="nav__links" id="navLinks">
+        <li><a href="#about" data-i18n="nav_about">Обо мне</a></li>
+        <li><a href="#process" data-i18n="nav_process">Процесс</a></li>
+        <li><a href="#results" data-i18n="nav_results">Результаты</a></li>
+        <li><a href="#pricing" data-i18n="nav_pricing">Стоимость</a></li>
+      </ul>
+      <div class="nav__controls">
+        <button class="lang-toggle" id="langToggle" aria-label="Switch language">
+          <span class="lang-opt active" data-l="ru">RU</span>
+          <span class="lang-divider">/</span>
+          <span class="lang-opt" data-l="uz">UZ</span>
+        </button>
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+          <span class="theme-icon theme-icon--dark">🌙</span>
+          <span class="theme-icon theme-icon--light">☀️</span>
+        </button>
+        <button class="btn btn--outline btn--sm nav-apply-btn" id="navApplyBtn" data-i18n="cta_apply">Подать
+          заявку</button>
+      </div>
+      <button class="nav__burger" id="navBurger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ── HERO ── -->
+  <section class="hero" id="hero">
+    <div class="hero__bg">
+      <canvas id="heroCanvas"></canvas>
+      <div class="hero__glow hero__glow--1"></div>
+      <div class="hero__glow hero__glow--2"></div>
+      <!-- Spinning decorative rings -->
+      <div class="spin-ring spin-ring--1"></div>
+      <div class="spin-ring spin-ring--2"></div>
+    </div>
+    <div class="container hero__inner">
+      <!-- LEFT: Text -->
+      <div class="hero__text">
+        <div class="hero__badge fade-up">
+          <span class="badge-dot"></span>
+          <span data-i18n="hero_badge">50+ студентов уже прошли трансформацию</span>
+        </div>
+        <h1 class="hero__headline fade-up">
+          <span data-i18n="hero_h1_1">Я строю личные бренды,</span><br />
+          <span data-i18n="hero_h1_2">которые приносят</span>
+          <span class="text-accent" data-i18n="hero_h1_3"> клиентов,</span><br />
+          <span data-i18n="hero_h1_4">авторитет и доход</span>
+        </h1>
+        <p class="hero__sub fade-up" data-i18n="hero_sub">
+          За 2 месяца совместной работы я помогу вам перейти от невидимости к признанному авторитету в вашей нише. Без
+          воды — только реальные инструменты и ежедневная поддержка.
+        </p>
+        <div class="hero__social-proof fade-up">
+          <div class="sp-avatars">
+            <div class="sp-avatar sp-avatar--1"></div>
+            <div class="sp-avatar sp-avatar--2"></div>
+            <div class="sp-avatar sp-avatar--3"></div>
+            <div class="sp-avatar sp-avatar--4"></div>
+          </div>
+          <span data-i18n="hero_proof">Уже со мной <strong>50+ экспертов</strong> — <span class="text-accent">~70%
+              достигли сильного роста</span></span>
+        </div>
+        <div class="hero__ctas fade-up">
+          <button class="btn btn--primary btn--glow" id="heroApplyBtn">
+            <span data-i18n="cta_apply_full">Подать заявку на менторство</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M5 12h14M12 5l7 7-7 7" />
+            </svg>
+          </button>
+          <button class="btn btn--ghost" id="heroCallBtn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path
+                d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 014.7 11.74a19.79 19.79 0 01-3.07-8.67A2 2 0 013.61 1h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z" />
+            </svg>
+            <span data-i18n="cta_call">Записаться на звонок</span>
+          </button>
+        </div>
+        <div class="hero__stats fade-up">
+          <div class="stat-item">
+            <span class="stat-num">50+</span>
+            <span class="stat-label" data-i18n="stat_students">Студентов</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-item">
+            <span class="stat-num">~70%</span>
+            <span class="stat-label" data-i18n="stat_growth">Добились роста</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-item">
+            <span class="stat-num">2</span>
+            <span class="stat-label" data-i18n="stat_months">Месяца</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-item">
+            <span class="stat-num">10–15</span>
+            <span class="stat-label" data-i18n="stat_spots">Мест</span>
+          </div>
+        </div>
+      </div>
+      <!-- RIGHT: Hero image (desktop) -->
+      <div class="hero__image-wrap fade-up">
+        <div class="hero__image-ring hero__image-ring--outer"></div>
+        <div class="hero__image-ring hero__image-ring--inner"></div>
+        <div class="hero__image-frame">
+          <!-- Replace rustam.png with your actual photo -->
+          <img src="rustam.png" alt="Рустам — ментор по личному бренду" class="hero__photo"
+            onerror="this.parentElement.classList.add('no-photo')" />
+          <div class="hero__photo-placeholder">
+            <span class="ph-letter">R</span>
+            <p data-i18n="photo_hint">Добавьте<br />ваше фото</p>
+          </div>
+        </div>
+        <div class="hero__image-badge">
+          <span class="badge-dot"></span>
+          <span data-i18n="hero_img_badge">Ментор по личному бренду</span>
+        </div>
+        <div class="hero__image-stat">
+          <span class="his-num">50+</span>
+          <span class="his-label" data-i18n="his_label">Трансформаций</span>
+        </div>
+      </div>
+    </div>
+    <div class="hero__scroll-hint">
+      <span data-i18n="scroll_hint">Прокрутите вниз</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- ── HOOKS ── -->
+  <section class="hooks" id="hooks">
+    <div class="container">
+      <p class="section-eyebrow text-center" data-i18n="hooks_eyebrow">Правда о личном бренде</p>
+      <h2 class="section-title text-center fade-up">
+        <span data-i18n="hooks_title1">Если вы узнаёте себя —</span><br />
+        <span class="text-accent" data-i18n="hooks_title2">читайте дальше.</span>
+      </h2>
+    </div>
+    <div class="hooks__track-wrapper">
+      <div class="hooks__track" id="hooksTrack">
+        <div class="hook-card">
+          <div class="hook-icon">🚫</div>
+          <p data-i18n="hook1">"Невидимых экспертов <strong>не покупают.</strong>"</p>
+        </div>
+        <div class="hook-card">
+          <div class="hook-icon">📉</div>
+          <p data-i18n="hook2">"Если контент не приносит клиентов — <strong>он сломан.</strong>"</p>
+        </div>
+        <div class="hook-card">
+          <div class="hook-icon">👁</div>
+          <p data-i18n="hook3">"Подписчики не важны. Важен <strong>авторитет.</strong>"</p>
+        </div>
+        <div class="hook-card">
+          <div class="hook-icon">💡</div>
+          <p data-i18n="hook4">"Ваши знания ценны — но ваше <strong>позиционирование слабое.</strong>"</p>
+        </div>
+        <div class="hook-card">
+          <div class="hook-icon">🏆</div>
+          <p data-i18n="hook5">"Личный бренд — самый <strong>прибыльный актив</strong> сегодня."</p>
+        </div>
+        <div class="hook-card">
+          <div class="hook-icon">⚡</div>
+          <p data-i18n="hook6">"Хватит ждать. <strong>Займите позицию эксперта.</strong>"</p>
+        </div>
+        <!-- dupes for loop -->
+        <div class="hook-card">
+          <div class="hook-icon">🚫</div>
+          <p data-i18n="hook1">"Невидимых экспертов <strong>не покупают.</strong>"</p>
+        </div>
+        <div class="hook-card">
+          <div class="hook-icon">📉</div>
+          <p data-i18n="hook2">"Если контент не приносит клиентов — <strong>он сломан.</strong>"</p>
+        </div>
+        <div class="hook-card">
+          <div class="hook-icon">👁</div>
+          <p data-i18n="hook3">"Подписчики не важны. Важен <strong>авторитет.</strong>"</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── PROBLEM ── -->
+  <section class="problem" id="problem">
+    <div class="container">
+      <p class="section-eyebrow text-center" data-i18n="problem_eyebrow">Настоящая проблема</p>
+      <h2 class="section-title text-center fade-up">
+        <span data-i18n="problem_title1">Вы эксперт.</span><br />
+        <span class="text-accent" data-i18n="problem_title3">Но вас никто не замечает.</span>
+      </h2>
+      <p class="section-sub text-center fade-up" data-i18n="problem_sub">Я видел это сотни раз. Умные, компетентные люди
+        остаются невидимыми, пока менее квалифицированные конкуренты забирают их клиентов.</p>
+      <div class="problem__grid">
+        <div class="problem-card fade-up">
+          <div class="problem-card__icon">🌑</div>
+          <h3 data-i18n="p1_title">Нулевая видимость</h3>
+          <p data-i18n="p1_desc">Вы создаёте контент, но вас никто не видит. Вы растворяетесь в шуме, пока менее
+            компетентные люди забирают внимание аудитории.</p>
+        </div>
+        <div class="problem-card fade-up">
+          <div class="problem-card__icon">📭</div>
+          <h3 data-i18n="p2_title">Нет потока клиентов</h3>
+          <p data-i18n="p2_desc">Нет входящих заявок, нет DM, нет рефералов. Вы гонитесь за каждой возможностью вместо
+            того, чтобы вас искали сами.</p>
+        </div>
+        <div class="problem-card fade-up">
+          <div class="problem-card__icon">🎲</div>
+          <h3 data-i18n="p3_title">Хаотичный контент</h3>
+          <p data-i18n="p3_desc">Вы публикуете без системы. Иногда «выстреливает», чаще нет. Без стратегии любые усилия
+            — это азартная игра.</p>
+        </div>
+        <div class="problem-card fade-up">
+          <div class="problem-card__icon">📊</div>
+          <h3 data-i18n="p4_title">Непостоянный рост</h3>
+          <p data-i18n="p4_desc">Редкие всплески — и снова тишина. У вас нет системы роста — только случайная удача.</p>
+        </div>
+        <div class="problem-card fade-up">
+          <div class="problem-card__icon">🎭</div>
+          <h3 data-i18n="p5_title">Низкий авторитет</h3>
+          <p data-i18n="p5_desc">Вас не воспринимают как эксперта №1. Вас видят одним из многих — и торгуются за цену.
+          </p>
+        </div>
+        <div class="problem-card fade-up">
+          <div class="problem-card__icon">🔄</div>
+          <h3 data-i18n="p6_title">Бесконечная гонка</h3>
+          <p data-i18n="p6_desc">Больше работы — те же результаты. Без правильного позиционирования усилия не
+            накапливаются — они истощают.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── TRANSFORMATION ── -->
+  <section class="transform" id="transform">
+    <div class="container">
+      <p class="section-eyebrow text-center" data-i18n="tr_eyebrow">Что меняется</p>
+      <h2 class="section-title text-center fade-up">
+        <span class="text-muted" data-i18n="tr_title1">Из невидимого эксперта</span><br />
+        <span data-i18n="tr_title2">в </span><span class="text-accent" data-i18n="tr_title3">признанный авторитет</span>
+      </h2>
+      <div class="transform__grid">
+        <div class="transform-block transform-block--before fade-up">
+          <div class="transform-block__label" data-i18n="before">ДО</div>
+          <ul class="transform-list">
+            <li><span class="cross">✕</span><span data-i18n="b1">Я веду вас к известности в нише</span></li>
+            <li><span class="cross">✕</span><span data-i18n="b2">Постоянный поток клиентов</span></li>
+            <li><span class="cross">✕</span><span data-i18n="b3">Контент, который конвертирует</span></li>
+            <li><span class="cross">✕</span><span data-i18n="b4">Премиальные цены без торгов</span></li>
+            <li><span class="cross">✕</span><span data-i18n="b5">Чёткое позиционирование</span></li>
+            <li><span class="cross">✕</span><span data-i18n="b6">Системный контент-движок</span></li>
+            <li><span class="cross">✕</span><span data-i18n="b7">Несколько источников дохода</span></li>
+          </ul>
+        </div>
+        <div class="transform__arrow fade-up">
+          <div class="arrow-line"></div>
+          <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="36"
+            height="36">
+            <path d="M5 12h14M12 5l7 7-7 7" />
+          </svg>
+          <span data-i18n="two_months">2 месяца</span>
+        </div>
+        <div class="transform-block transform-block--after fade-up">
+          <div class="transform-block__label after-label" data-i18n="after">ПОСЛЕ</div>
+          <ul class="transform-list">
+            <li><span class="check">✓</span><span data-i18n="a1">Известный и уважаемый эксперт</span></li>
+            <li><span class="check">✓</span><span data-i18n="a2">Входящие премиальные клиенты</span></li>
+            <li><span class="check">✓</span><span data-i18n="a3">Контент, который конвертирует</span></li>
+            <li><span class="check">✓</span><span data-i18n="a4">Командование премиальными ценами</span></li>
+            <li><span class="check">✓</span><span data-i18n="a5">Чёткое позиционирование</span></li>
+            <li><span class="check">✓</span><span data-i18n="a6">Автоматизированная система контента</span></li>
+            <li><span class="check">✓</span><span data-i18n="a7">Несколько источников дохода</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── ABOUT ME ── -->
+  <section class="authority" id="about">
+    <div class="container">
+      <p class="section-eyebrow" data-i18n="auth_eyebrow">Обо мне</p>
+      <div class="authority__grid">
+        <div class="authority__image-wrap fade-up">
+          <div class="authority__image-glow"></div>
+          <div class="authority__image-placeholder">
+            <div class="portrait-letter">R</div>
+            <div class="portrait-ring"></div>
+            <div class="portrait-ring portrait-ring--2"></div>
+          </div>
+          <div class="authority__badge-float">
+            <div class="af-dot"></div>
+            <span data-i18n="auth_badge">Ментор по личному бренду</span>
+          </div>
+        </div>
+        <div class="authority__content fade-up">
+          <h2 class="section-title"><span data-i18n="auth_meet">Меня зовут </span><span
+              class="text-accent">Рустам</span></h2>
+          <p class="authority__tagline" data-i18n="auth_tagline">"Я строю личные бренды, которые меняют жизни людей
+            через признание, доверие и авторитет."</p>
+          <p class="authority__bio" data-i18n="auth_bio">Я посвятил карьеру одной цели: помогать экспертам,
+            предпринимателям и профессионалам создавать бренды, которые не просто красиво выглядят — они приносят
+            реальные деньги. Моя методология основана на позиционировании, аутентичном сторителлинге и системном
+            контенте. Никакой теории — только то, что реально работает.</p>
+          <div class="authority__stats">
+            <div class="auth-stat"><span class="auth-stat__num text-accent">50+</span><span class="auth-stat__label"
+                data-i18n="auth_s1">Студентов прошли менторство</span></div>
+            <div class="auth-stat"><span class="auth-stat__num text-accent">~70%</span><span class="auth-stat__label"
+                data-i18n="auth_s2">Достигли сильного роста</span></div>
+            <div class="auth-stat"><span class="auth-stat__num text-accent">100%</span><span class="auth-stat__label"
+                data-i18n="auth_s3">Только практика</span></div>
+          </div>
+          <div class="authority__philosophy">
+            <div class="phil-icon">⚡</div>
+            <p data-i18n="auth_phil">Ноль теории ради теории. В каждой сессии я фокусируюсь на создании <strong>реальных
+                активов</strong> для вашей конкретной ниши.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── PROCESS ── -->
+  <section class="process" id="process">
+    <div class="container">
+      <p class="section-eyebrow text-center" data-i18n="proc_eyebrow">Моя методология</p>
+      <h2 class="section-title text-center fade-up">
+        <span data-i18n="proc_title1">6 шагов к</span> <span class="text-accent" data-i18n="proc_title2">вашей
+          трансформации</span>
+      </h2>
+      <p class="section-sub text-center fade-up" data-i18n="proc_sub">Каждый шаг строится на предыдущем. Я провожу вас
+        от неизвестного эксперта до монетизированного авторитета.</p>
+      <div class="process__steps">
+        <div class="process-step fade-up" style="--step-delay:0ms">
+          <div class="process-step__num">01</div>
+          <div class="process-step__card">
+            <div class="ps-icon">🎯</div>
+            <h3 data-i18n="step1_title">Позиционирование</h3>
+            <p data-i18n="step1_desc">Вместе мы определяем ваше уникальное позиционирование — нишу, сообщение и
+              аудиторию. Это фундамент всего.</p>
+          </div>
+        </div>
+        <div class="process-step fade-up" style="--step-delay:100ms">
+          <div class="process-step__num">02</div>
+          <div class="process-step__card">
+            <div class="ps-icon">📝</div>
+            <h3 data-i18n="step2_title">Система контента</h3>
+            <p data-i18n="step2_desc">Я помогаю построить системный контент-движок. Проверенные фреймворки, которые
+              создают доверие и конверсии.</p>
+          </div>
+        </div>
+        <div class="process-step fade-up" style="--step-delay:200ms">
+          <div class="process-step__num">03</div>
+          <div class="process-step__card">
+            <div class="ps-icon">📈</div>
+            <h3 data-i18n="step3_title">Рост аудитории</h3>
+            <p data-i18n="step3_desc">Внедряем стратегии, которые привлекают правильных подписчиков — ваших будущих
+              клиентов.</p>
+          </div>
+        </div>
+        <div class="process-step fade-up" style="--step-delay:300ms">
+          <div class="process-step__num">04</div>
+          <div class="process-step__card">
+            <div class="ps-icon">📦</div>
+            <h3 data-i18n="step4_title">Создание продукта</h3>
+            <p data-i18n="step4_desc">Мы создаём ваш флагманский оффер — курс, коучинг или консалтинг — основываясь на
+              реальных потребностях вашей аудитории.</p>
+          </div>
+        </div>
+        <div class="process-step fade-up" style="--step-delay:400ms">
+          <div class="process-step__num">05</div>
+          <div class="process-step__card">
+            <div class="ps-icon">🚀</div>
+            <h3 data-i18n="step5_title">Запуск</h3>
+            <p data-i18n="step5_desc">Мы вместе планируем и проводим запуск. Я помогаю создать ажиотаж и конвертировать
+              аудиторию в покупателей.</p>
+          </div>
+        </div>
+        <div class="process-step fade-up" style="--step-delay:500ms">
+          <div class="process-step__num">06</div>
+          <div class="process-step__card">
+            <div class="ps-icon">💰</div>
+            <h3 data-i18n="step6_title">Монетизация</h3>
+            <p data-i18n="step6_desc">Выстраиваем несколько источников дохода. Ваш авторитет — это ваш главный актив и
+              бизнес.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── ROADMAP (replaces features grid) ── -->
+  <section class="roadmap" id="features">
+    <div class="container">
+      <p class="section-eyebrow text-center" data-i18n="feat_eyebrow">Карта пути</p>
+      <h2 class="section-title text-center fade-up">
+        <span data-i18n="feat_title1">Всё, что я даю вам</span><br />
+        <span class="text-accent" data-i18n="feat_title2">на пути к цели</span>
+      </h2>
+      <p class="section-sub text-center fade-up" data-i18n="feat_sub">Каждый элемент программы — это шаг на пути от
+        эксперта к признанному бренду</p>
+    </div>
+    <div class="roadmap__scroll-wrapper">
+      <div class="roadmap__track" id="roadmapTrack">
+        <div class="roadmap__path-line"></div>
+        <div class="roadmap__item fade-up">
+          <div class="roadmap__dot"><span>01</span></div>
+          <div class="roadmap__card">
+            <div class="rm-icon">🧭</div>
+            <h3 data-i18n="f1_title">Персональная стратегия</h3>
+            <p data-i18n="f1_desc">Глубокие сессии для построения вашей кастомной стратегии бренда. Ваша ситуация — ваш
+              уникальный план.</p>
+          </div>
+        </div>
+        <div class="roadmap__item fade-up">
+          <div class="roadmap__dot"><span>02</span></div>
+          <div class="roadmap__card">
+            <div class="rm-icon">🔥</div>
+            <h3 data-i18n="f2_title">Вирусные фреймворки</h3>
+            <p data-i18n="f2_desc">Проверенные шаблоны для создания контента, который останавливает скролл и строит
+              авторитет.</p>
+          </div>
+        </div>
+        <div class="roadmap__item fade-up">
+          <div class="roadmap__dot"><span>03</span></div>
+          <div class="roadmap__card">
+            <div class="rm-icon">📡</div>
+            <h3 data-i18n="f3_title">Система роста</h3>
+            <p data-i18n="f3_desc">Пошаговые плейбуки, которые привлекают нужных людей — не просто подписчиков, а
+              будущих клиентов.</p>
+          </div>
+        </div>
+        <div class="roadmap__item fade-up">
+          <div class="roadmap__dot"><span>04</span></div>
+          <div class="roadmap__card">
+            <div class="rm-icon">💎</div>
+            <h3 data-i18n="f4_title">Монетизация</h3>
+            <p data-i18n="f4_desc">Как превращать аудиторию в доход. Упаковка экспертизы. Продажи без давления и
+              демпинга.</p>
+          </div>
+        </div>
+        <div class="roadmap__item fade-up">
+          <div class="roadmap__dot"><span>05</span></div>
+          <div class="roadmap__card">
+            <div class="rm-icon">🏗</div>
+            <h3 data-i18n="f5_title">Создание продукта</h3>
+            <p data-i18n="f5_desc">Дизайн и запуск первого цифрового продукта или премиального оффера.</p>
+          </div>
+        </div>
+        <div class="roadmap__item fade-up">
+          <div class="roadmap__dot"><span>06</span></div>
+          <div class="roadmap__card">
+            <div class="rm-icon">🚀</div>
+            <h3 data-i18n="f6_title">Стратегия запуска</h3>
+            <p data-i18n="f6_desc">Полная дорожная карта от прогрева до допродаж. Каждый запуск — максимально
+              прибыльным.</p>
+          </div>
+        </div>
+        <div class="roadmap__item fade-up">
+          <div class="roadmap__dot"><span>07</span></div>
+          <div class="roadmap__card">
+            <div class="rm-icon">💬</div>
+            <h3 data-i18n="f7_title">Ежедневная обратная связь</h3>
+            <p data-i18n="f7_desc">Каждый день я разбираю ваш контент, стратегию и действия. Никогда не застрянете без
+              поддержки.</p>
+          </div>
+        </div>
+        <div class="roadmap__item fade-up">
+          <div class="roadmap__dot"><span>08</span></div>
+          <div class="roadmap__card">
+            <div class="rm-icon">🎓</div>
+            <h3 data-i18n="f8_title">Библиотека уроков</h3>
+            <p data-i18n="f8_desc">Все записи лекций, шаблоны и фреймворки остаются у вас навсегда.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="roadmap__controls">
+      <button class="rm-btn" id="rmLeft" aria-label="Left">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <path d="M19 12H5M5 12l7 7M5 12l7-7" />
+        </svg>
+      </button>
+      <div class="rm-dots" id="rmDots"></div>
+      <button class="rm-btn" id="rmRight" aria-label="Right">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <path d="M5 12h14M12 5l7 7-7 7" />
+        </svg>
+      </button>
+    </div>
+  </section>
+
+  <!-- ── RESULTS ── -->
+  <section class="results" id="results">
+    <div class="container">
+      <p class="section-eyebrow text-center" data-i18n="res_eyebrow">Результаты моих студентов</p>
+      <h2 class="section-title text-center fade-up">
+        <span data-i18n="res_title1">Реальные люди.</span><br />
+        <span class="text-accent" data-i18n="res_title2">Реальные трансформации.</span>
+      </h2>
+      <p class="section-sub text-center fade-up" data-i18n="res_sub">~70% моих выпускников достигают сильного роста
+        аудитории за 2 месяца совместной работы.</p>
+      <div class="testimonials__grid">
+        <div class="testimonial-card fade-up">
+          <div class="tc-quote">"</div>
+          <p class="tc-text" data-i18n="t1_text">Я выросла с 2 000 до 80 000 подписчиков за 8 недель. Что важнее —
+            подписала 6 новых премиальных клиентов прямо во время менторства. Рустам — это чистый ROI.</p>
+          <div class="tc-footer">
+            <div class="tc-avatar tc-avatar--1">А</div>
+            <div class="tc-info"><span class="tc-name" data-i18n="t1_name">Айша К.</span><span class="tc-role"
+                data-i18n="t1_role">Бизнес-коуч</span></div>
+            <div class="tc-result"><span class="tc-result-num text-accent">40x</span><span class="tc-result-label"
+                data-i18n="t1_result">Рост аудитории</span></div>
+          </div>
+        </div>
+        <div class="testimonial-card fade-up">
+          <div class="tc-quote">"</div>
+          <p class="tc-text" data-i18n="t2_text">Запустил первый онлайн-курс на 6-й неделе и заработал $4 200 за первые
+            3 дня. 2 года «думал об этом». Рустам помог мне просто взять и сделать это.</p>
+          <div class="tc-footer">
+            <div class="tc-avatar tc-avatar--2">М</div>
+            <div class="tc-info"><span class="tc-name" data-i18n="t2_name">Михаил Т.</span><span class="tc-role"
+                data-i18n="t2_role">Консультант по маркетингу</span></div>
+            <div class="tc-result"><span class="tc-result-num text-accent">$4.2k</span><span class="tc-result-label"
+                data-i18n="t2_result">Первый запуск</span></div>
+          </div>
+        </div>
+        <div class="testimonial-card fade-up">
+          <div class="tc-quote">"</div>
+          <p class="tc-text" data-i18n="t3_text">Подняла ставку с $150/час до $500/час после перепозиционирования.
+            Теперь клиенты сами приходят ко мне. Один фреймворк позиционирования от Рустама стоит в 10 раз дороже самой
+            программы.</p>
+          <div class="tc-footer">
+            <div class="tc-avatar tc-avatar--3">С</div>
+            <div class="tc-info"><span class="tc-name" data-i18n="t3_name">Сара Л.</span><span class="tc-role"
+                data-i18n="t3_role">HR-консультант</span></div>
+            <div class="tc-result"><span class="tc-result-num text-accent">3.3x</span><span class="tc-result-label"
+                data-i18n="t3_result">Рост ставки</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="results__global-stats fade-up">
+        <div class="global-stat"><span class="gs-num">50+</span><span class="gs-label"
+            data-i18n="gs1">Выпускников</span></div>
+        <div class="global-stat"><span class="gs-num">~70%</span><span class="gs-label" data-i18n="gs2">Достигли
+            роста</span></div>
+        <div class="global-stat"><span class="gs-num">$800</span><span class="gs-label"
+            data-i18n="gs3">Инвестиция</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── PRICING ── -->
+  <section class="pricing" id="pricing">
+    <div class="pricing__bg-glow"></div>
+    <div class="container">
+      <p class="section-eyebrow text-center" data-i18n="price_eyebrow">Инвестиция</p>
+      <h2 class="section-title text-center fade-up" data-i18n="price_title">Одна цена. Полная трансформация.</h2>
+      <div class="pricing__card fade-up">
+        <div class="pricing__scarcity">
+          <span class="scarcity-dot"></span>
+          <span data-i18n="scarcity">ОГРАНИЧЕННЫЕ МЕСТА — Только 10–15 участников в группе</span>
+        </div>
+        <div class="pricing__top">
+          <div class="pricing__name" data-i18n="price_name">Моё менторство по личному бренду</div>
+          <div class="pricing__duration" data-i18n="price_duration">Программа на 2 месяца</div>
+          <div class="pricing__price"><span class="price-dollar">$</span><span class="price-amount">800</span></div>
+          <p class="pricing__desc" data-i18n="price_desc">Полный доступ к моей 2-месячной программе трансформации с
+            ежедневной поддержкой.</p>
+        </div>
+        <ul class="pricing__features-list">
+          <li><span class="check">✓</span><span data-i18n="pf1">Персональные стратегические сессии со мной</span></li>
+          <li><span class="check">✓</span><span data-i18n="pf2">Мои вирусные контент-фреймворки</span></li>
+          <li><span class="check">✓</span><span data-i18n="pf3">Плейбуки роста аудитории</span></li>
+          <li><span class="check">✓</span><span data-i18n="pf4">Стратегия монетизации</span></li>
+          <li><span class="check">✓</span><span data-i18n="pf5">Создание вашего продукта вместе</span></li>
+          <li><span class="check">✓</span><span data-i18n="pf6">Планирование и запуск</span></li>
+          <li><span class="check">✓</span><span data-i18n="pf7">Ежедневная обратная связь от меня</span></li>
+          <li><span class="check">✓</span><span data-i18n="pf8">Доступ к библиотеке уроков навсегда</span></li>
+          <li><span class="check">✓</span><span data-i18n="pf9">Группа 10–15 участников</span></li>
+        </ul>
+        <button class="btn btn--primary btn--glow btn--large" id="pricingApplyBtn"
+          style="width:100%;justify-content:center;">
+          <span data-i18n="cta_apply_now">Подать заявку — Занять место</span>
+        </button>
+        <p class="pricing__note" data-i18n="price_note">Требуется заявка. Места ограничены. Я отбираю участников лично
+          по степени готовности.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FAQ NEW STYLE ── -->
+  <section class="faq" id="faq">
+    <div class="container">
+      <div class="faq__layout">
+        <!-- Left: Big text + decoration -->
+        <div class="faq__left fade-up">
+          <p class="faq__eyebrow" data-i18n="faq_eyebrow">Часто задают</p>
+          <h2 class="faq__big-title" data-i18n="faq_big">ВОПРОСЫ?<br />МЫ ЗДЕСЬ,<br />ЧТОБЫ<br />ПОМОЧЬ!</h2>
+          <p class="faq__left-sub" data-i18n="faq_left_sub">Есть вопрос? Напишите — я отвечу лично в течение 24 часов.
+          </p>
+          <div class="faq__deco">?!</div>
+          <button class="btn btn--primary btn--glow" id="faqApplyBtn" style="margin-top:32px">
+            <span data-i18n="cta_apply_full">Подать заявку</span>
+          </button>
+        </div>
+        <!-- Right: Accordion -->
+        <div class="faq__right fade-up">
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span data-i18n="faq1_q">Нужно ли иметь большую аудиторию?</span>
+              <span class="faq-plus">+</span>
+            </button>
+            <div class="faq-answer">
+              <p data-i18n="faq1_a">Абсолютно нет. Многие мои лучшие выпускники начинали с нуля. Я учу строить
+                правильную аудиторию — целевую, а не просто большую. Важна ваша готовность работать, а не текущее число
+                подписчиков.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span data-i18n="faq2_q">Нужен ли опыт создания контента?</span>
+              <span class="faq-plus">+</span>
+            </button>
+            <div class="faq-answer">
+              <p data-i18n="faq2_a">Опыт не нужен. Я обучаю всему с нуля: как снимать, монтировать, писать цепляющие
+                тексты и выстраивать присутствие с первого дня.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span data-i18n="faq3_q">Сколько времени нужно в неделю?</span>
+              <span class="faq-plus">+</span>
+            </button>
+            <div class="faq-answer">
+              <p data-i18n="faq3_a">Рассчитывайте на 1–2 часа в день: живые сессии, задания, создание и публикация
+                контента. Программа построена вокруг практики, а не теории.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span data-i18n="faq4_q">Что если я никогда не создавал контент?</span>
+              <span class="faq-plus">+</span>
+            </button>
+            <div class="faq-answer">
+              <p data-i18n="faq4_a">Отлично. Начало с нуля — это преимущество. Я строю ваш бренд с чистого листа с
+                правильными основами, без исправления чужих ошибок.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span data-i18n="faq5_q">Каких результатов реально ожидать?</span>
+              <span class="faq-plus">+</span>
+            </button>
+            <div class="faq-answer">
+              <p data-i18n="faq5_a">~70% моих выпускников достигают сильного узнавания и роста аудитории за 2 месяца.
+                Многие привлекают первых премиальных клиентов прямо во время программы. Результаты зависят от вашего
+                внедрения.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span data-i18n="faq6_q">Это теория или реальная работа?</span>
+              <span class="faq-plus">+</span>
+            </button>
+            <div class="faq-answer">
+              <p data-i18n="faq6_a">100% внедрение. Каждая сессия заканчивается конкретным результатом — чем-то
+                созданным или запущенным. Я не терплю теорию без действия.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FINAL CTA ── -->
+  <section class="final-cta">
+    <div class="final-cta__glow"></div>
+    <!-- Spinning decorative elements -->
+    <div class="spin-ring spin-ring--cta-1"></div>
+    <div class="spin-ring spin-ring--cta-2"></div>
+    <div class="container">
+      <div class="final-cta__inner fade-up">
+        <p class="section-eyebrow text-center" data-i18n="fcta_eyebrow">Ваш выбор</p>
+        <h2 class="final-cta__headline text-center">
+          <span data-i18n="fcta_title1">Ваш личный бренд может</span><br />
+          <span class="text-accent" data-i18n="fcta_title2">изменить всю вашу жизнь.</span>
+        </h2>
+        <p class="final-cta__sub text-center" data-i18n="fcta_sub">Эксперты, которые будут лидировать через 2 года,
+          строят бренды прямо сейчас. Единственный вопрос: будете ли вы среди них?</p>
+        <div class="final-cta__urgency">
+          <span class="scarcity-dot"></span>
+          <span data-i18n="fcta_urgency">Следующий поток: Только 10–15 мест — Подайте заявку, пока они не заняты</span>
+        </div>
+        <div class="final-cta__btns">
+          <button class="btn btn--primary btn--glow btn--large" id="finalApplyBtn">
+            <span data-i18n="cta_apply_full">Подать заявку на менторство</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M5 12h14M12 5l7 7-7 7" />
+            </svg>
+          </button>
+          <button class="btn btn--ghost" id="finalCallBtn"><span data-i18n="cta_call">Записаться на
+              звонок</span></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ── -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__logo"><span class="logo-r">R</span>USTAM<p data-i18n="footer_sub">Менторство по личному бренду
+        </p>
+      </div>
+      <p class="footer__copy" data-i18n="footer_copy">© 2026 Рустам. Все права защищены.</p>
+    </div>
+  </footer>
+
+  <!-- ── MODAL ── -->
+  <div class="modal" id="appModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal__overlay" id="modalOverlay"></div>
+    <div class="modal__content">
+      <button class="modal__close" id="modalClose" aria-label="Close">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M18 6L6 18M6 6l12 12" />
+        </svg>
+      </button>
+      <div class="modal__header">
+        <span class="modal__badge" data-i18n="modal_badge">Ограниченные места</span>
+        <h2 id="modalTitle" data-i18n="modal_title">Подать заявку на менторство</h2>
+        <p data-i18n="modal_sub">Заполните форму — я лично рассмотрю заявку в течение 24 часов.</p>
+      </div>
+      <form class="modal__form" id="appForm" novalidate>
+        <div class="form-group">
+          <label for="fieldName" data-i18n="field_name">Ваше имя *</label>
+          <input type="text" id="fieldName" data-i18n-ph="ph_name" placeholder="например, Алексей Иванов" required />
+        </div>
+        <div class="form-group">
+          <label for="fieldSocial" data-i18n="field_social">Instagram / Ссылка на соцсеть *</label>
+          <input type="text" id="fieldSocial" data-i18n-ph="ph_social" placeholder="@ваш_аккаунт" required />
+        </div>
+        <div class="form-group">
+          <label for="fieldNiche" data-i18n="field_niche">Ваша ниша / Экспертиза *</label>
+          <input type="text" id="fieldNiche" data-i18n-ph="ph_niche" placeholder="например, коучинг, маркетинг, фитнес"
+            required />
+        </div>
+        <div class="form-group">
+          <label for="fieldIncome" data-i18n="field_income">Текущий доход в месяц *</label>
+          <select id="fieldIncome" required>
+            <option value="" disabled selected data-i18n="income_select">Выберите диапазон</option>
+            <option data-i18n="income_1">До $500/мес</option>
+            <option data-i18n="income_2">$500 – $2 000/мес</option>
+            <option data-i18n="income_3">$2 000 – $5 000/мес</option>
+            <option data-i18n="income_4">$5 000 – $10 000/мес</option>
+            <option data-i18n="income_5">Более $10 000/мес</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="fieldGoal" data-i18n="field_goal">Ваша главная цель от менторства? *</label>
+          <textarea id="fieldGoal" rows="3" data-i18n-ph="ph_goal"
+            placeholder="например, запустить первый продукт и привлечь 3 клиента..." required></textarea>
+        </div>
+        <button type="submit" class="btn btn--primary btn--glow" style="width:100%;justify-content:center;"
+          id="submitBtn">
+          <span data-i18n="submit_btn">Отправить заявку</span>
+        </button>
+        <p class="form-note" data-i18n="form_note">Нажимая кнопку, вы соглашаетесь на связь через Telegram/WhatsApp для
+          обсуждения заявки.</p>
+      </form>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+
+</html>
