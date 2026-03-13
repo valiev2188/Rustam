@@ -13,19 +13,7 @@
     rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
-<!-- Yandex.Metrika counter -->
-<script type="text/javascript">
-    (function(m,e,t,r,i,k,a){
-        m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-        m[i].l=1*new Date();
-        for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
-        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
-    })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=107452257', 'ym');
 
-    ym(107452257, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
-</script>
-<noscript><div><img src="https://mc.yandex.ru/watch/107452257" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-<!-- /Yandex.Metrika counter -->
 <body>
 
   <!-- PUSH NOTIFICATION -->
@@ -167,57 +155,86 @@
     </div>
   </section>
 
-  <!-- ── HOOKS ── -->
-  <section class="hooks" id="hooks">
+
+  <!-- ── PROGRAM PREVIEW ── -->
+  <section class="program-preview" id="program">
     <div class="container">
-      <p class="section-eyebrow text-center" data-i18n="hooks_eyebrow">Правда о личном бренде</p>
+      <p class="section-eyebrow text-center" data-i18n="prog_eyebrow">Формат программы</p>
       <h2 class="section-title text-center fade-up">
-        <span data-i18n="hooks_title1">Если вы узнаёте себя —</span><br />
-        <span class="text-accent" data-i18n="hooks_title2">читайте дальше.</span>
+        <span data-i18n="prog_title1">Что вас ждёт</span><br />
+        <span class="text-accent" data-i18n="prog_title2">внутри менторства</span>
       </h2>
-    </div>
-    <div class="hooks__track-wrapper">
-      <div class="hooks__track" id="hooksTrack">
-        <div class="hook-card">
-          <div class="hook-icon">🚫</div>
-          <p data-i18n="hook1">"Невидимых экспертов <strong>не покупают.</strong>"</p>
+
+      <div class="program-preview__grid">
+
+        <!-- LEFT: Format facts -->
+        <div class="program-facts fade-up">
+          <div class="program-fact">
+            <div class="pf-icon">⏱</div>
+            <div class="pf-content">
+              <strong data-i18n="fact1_title">2 МЕСЯЦА ИНТЕНСИВА</strong>
+              <p data-i18n="fact1_desc">Высокий темп, созданный для максимального внедрения и результата.</p>
+            </div>
+          </div>
+          <div class="program-fact">
+            <div class="pf-icon">👥</div>
+            <div class="pf-content">
+              <strong data-i18n="fact2_title">ГРУППОВОЕ МЕНТОРСТВО</strong>
+              <p data-i18n="fact2_desc">Ограничено 15 студентами для прямого доступа к эксперту и личного внимания.</p>
+            </div>
+          </div>
+          <div class="program-fact">
+            <div class="pf-icon">💬</div>
+            <div class="pf-content">
+              <strong data-i18n="fact3_title">ЕЖЕДНЕВНЫЙ ФИДБЕК</strong>
+              <p data-i18n="fact3_desc">Прямая обратная связь по вашему контенту и стратегии каждый день.</p>
+            </div>
+          </div>
+          <div class="program-fact">
+            <div class="pf-icon">🎓</div>
+            <div class="pf-content">
+              <strong data-i18n="fact4_title">ДОСТУП НАВСЕГДА</strong>
+              <p data-i18n="fact4_desc">Все записи, шаблоны и фреймворки остаются у вас после программы.</p>
+            </div>
+          </div>
         </div>
-        <div class="hook-card">
-          <div class="hook-icon">📉</div>
-          <p data-i18n="hook2">"Если контент не приносит клиентов — <strong>он сломан.</strong>"</p>
+
+        <!-- RIGHT: Modules + For Whom -->
+        <div class="program-modules fade-up">
+          <div class="pm-header" data-i18n="prog_modules_title">🗂 Что вы получите:</div>
+          <div class="pm-list">
+            <div class="pm-item"><span class="pm-num">01</span><span data-i18n="pm1">Персональная стратегия бренда под
+                вашу нишу</span></div>
+            <div class="pm-item"><span class="pm-num">02</span><span data-i18n="pm2">Вирусные контент-фреймворки,
+                которые конвертируют</span></div>
+            <div class="pm-item"><span class="pm-num">03</span><span data-i18n="pm3">Плейбук роста — привлечение нужной
+                аудитории</span></div>
+            <div class="pm-item"><span class="pm-num">04</span><span data-i18n="pm4">Упаковка экспертизы в премиальный
+                оффер</span></div>
+            <div class="pm-item"><span class="pm-num">05</span><span data-i18n="pm5">Полный запуск вашего продукта или
+                услуги</span></div>
+            <div class="pm-item"><span class="pm-num">06</span><span data-i18n="pm6">Несколько источников дохода от
+                личного бренда</span></div>
+          </div>
+
+          <div class="pm-for-whom">
+            <div class="pm-fw-title" data-i18n="prog_for_whom">🎯 Идеально для:</div>
+            <div class="pm-fw-tags">
+              <span class="fw-tag" data-i18n="fw1">Предпринимателей</span>
+              <span class="fw-tag" data-i18n="fw2">Экспертов</span>
+              <span class="fw-tag" data-i18n="fw3">Консультантов</span>
+              <span class="fw-tag" data-i18n="fw4">Фрилансеров</span>
+              <span class="fw-tag" data-i18n="fw5">Профи своего дела</span>
+            </div>
+            <p class="pm-fw-note" data-i18n="fw_note">У вас должен быть существующий опыт или бизнес, чтобы получить
+              максимум от программы.</p>
+          </div>
         </div>
-        <div class="hook-card">
-          <div class="hook-icon">👁</div>
-          <p data-i18n="hook3">"Подписчики не важны. Важен <strong>авторитет.</strong>"</p>
-        </div>
-        <div class="hook-card">
-          <div class="hook-icon">💡</div>
-          <p data-i18n="hook4">"Ваши знания ценны — но ваше <strong>позиционирование слабое.</strong>"</p>
-        </div>
-        <div class="hook-card">
-          <div class="hook-icon">🏆</div>
-          <p data-i18n="hook5">"Личный бренд — самый <strong>прибыльный актив</strong> сегодня."</p>
-        </div>
-        <div class="hook-card">
-          <div class="hook-icon">⚡</div>
-          <p data-i18n="hook6">"Хватит ждать. <strong>Займите позицию эксперта.</strong>"</p>
-        </div>
-        <!-- dupes for loop -->
-        <div class="hook-card">
-          <div class="hook-icon">🚫</div>
-          <p data-i18n="hook1">"Невидимых экспертов <strong>не покупают.</strong>"</p>
-        </div>
-        <div class="hook-card">
-          <div class="hook-icon">📉</div>
-          <p data-i18n="hook2">"Если контент не приносит клиентов — <strong>он сломан.</strong>"</p>
-        </div>
-        <div class="hook-card">
-          <div class="hook-icon">👁</div>
-          <p data-i18n="hook3">"Подписчики не важны. Важен <strong>авторитет.</strong>"</p>
-        </div>
+
       </div>
     </div>
   </section>
+
 
   <!-- ── PROBLEM ── -->
   <section class="problem" id="problem">
@@ -539,6 +556,93 @@
       </h2>
       <p class="section-sub text-center fade-up" data-i18n="res_sub">~70% моих выпускников достигают сильного роста
         аудитории за 2 месяца совместной работы.</p>
+
+      <!-- ── Before/After Photo Gallery ── -->
+      <div class="ba-gallery fade-up">
+        <div class="ba-label-row">
+          <span class="ba-label ba-label--before" data-i18n="before">ДО</span>
+          <span class="ba-arrow">→</span>
+          <span class="ba-label ba-label--after" data-i18n="after">ПОСЛЕ</span>
+        </div>
+
+        <div class="ba-scroll-track" id="baTrack">
+
+          <!-- Pair 1 -->
+          <div class="ba-pair">
+            <div class="ba-card ba-card--before">
+              <div class="ba-tag ba-tag--before" data-i18n="before">ДО</div>
+              <img src="before_1.webp" alt="До менторства" class="ba-img"
+                onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+              <div class="ba-placeholder">
+                <span>📱</span>
+                <span data-i18n="ba_add_photo">Добавьте скриншот</span>
+              </div>
+              <div class="ba-metric ba-metric--muted">2 000 <span>подписчиков</span></div>
+            </div>
+            <div class="ba-card ba-card--after">
+              <div class="ba-tag ba-tag--after" data-i18n="after">ПОСЛЕ</div>
+              <img src="after_1.webp" alt="После менторства" class="ba-img"
+                onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+              <div class="ba-placeholder">
+                <span>📱</span>
+                <span data-i18n="ba_add_photo">Добавьте скриншот</span>
+              </div>
+              <div class="ba-metric ba-metric--accent">80 000 <span>подписчиков</span></div>
+            </div>
+          </div>
+
+          <!-- Pair 2 -->
+          <div class="ba-pair">
+            <div class="ba-card ba-card--before">
+              <div class="ba-tag ba-tag--before" data-i18n="before">ДО</div>
+              <img src="before_2.webp" alt="До менторства" class="ba-img"
+                onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+              <div class="ba-placeholder">
+                <span>📱</span>
+                <span data-i18n="ba_add_photo">Добавьте скриншот</span>
+              </div>
+              <div class="ba-metric ba-metric--muted">$150/час</div>
+            </div>
+            <div class="ba-card ba-card--after">
+              <div class="ba-tag ba-tag--after" data-i18n="after">ПОСЛЕ</div>
+              <img src="after_2.webp" alt="После менторства" class="ba-img"
+                onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+              <div class="ba-placeholder">
+                <span>📱</span>
+                <span data-i18n="ba_add_photo">Добавьте скриншот</span>
+              </div>
+              <div class="ba-metric ba-metric--accent">$500/час</div>
+            </div>
+          </div>
+
+          <!-- Pair 3 -->
+          <div class="ba-pair">
+            <div class="ba-card ba-card--before">
+              <div class="ba-tag ba-tag--before" data-i18n="before">ДО</div>
+              <img src="before_3.webp" alt="До менторства" class="ba-img"
+                onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+              <div class="ba-placeholder">
+                <span>📱</span>
+                <span data-i18n="ba_add_photo">Добавьте скриншот</span>
+              </div>
+              <div class="ba-metric ba-metric--muted">0 запусков</div>
+            </div>
+            <div class="ba-card ba-card--after">
+              <div class="ba-tag ba-tag--after" data-i18n="after">ПОСЛЕ</div>
+              <img src="after_3.webp" alt="После менторства" class="ba-img"
+                onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+              <div class="ba-placeholder">
+                <span>📱</span>
+                <span data-i18n="ba_add_photo">Добавьте скриншот</span>
+              </div>
+              <div class="ba-metric ba-metric--accent">$4 200 / запуск</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <!-- ── End Before/After ── -->
+
       <div class="testimonials__grid">
         <div class="testimonial-card fade-up">
           <div class="tc-quote">"</div>
