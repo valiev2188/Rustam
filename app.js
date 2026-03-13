@@ -477,7 +477,7 @@ document.querySelectorAll('.btn').forEach(btn => {
 });
 ['heroCallBtn', 'finalCallBtn'].forEach(id => {
   const btn = document.getElementById(id);
-  if (btn) btn.addEventListener('click', () => window.open('https://t.me/rustam_mentorship', '_blank'));
+  if (btn) btn.addEventListener('click', () => window.open('https://t.me/rustamdd', '_blank'));
 });
 
 /* ── Form submit → Telegram ───────────────────────── */
@@ -515,7 +515,7 @@ document.getElementById('appForm').addEventListener('submit', async e => {
         <div style="font-size:52px;">✅</div>
         <h3 style="font-size:22px;font-weight:800;color:var(--text)">${t.success_title}</h3>
         <p style="font-size:14px;color:var(--text-60);line-height:1.65;max-width:360px;">${t.success_text}</p>
-        <a href="https://t.me/rustam_mentorship" target="_blank"
+        <a href="https://t.me/rustamdd" target="_blank"
            style="margin-top:10px;display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,var(--red),var(--red-dark));color:#fff;font-weight:700;padding:14px 28px;border-radius:50px;font-size:15px;text-decoration:none;box-shadow:0 0 28px var(--red-glow)">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.248l-2.025 9.54c-.15.674-.543.838-1.1.52l-3.04-2.24-1.468 1.41c-.163.162-.299.298-.612.298l.218-3.087 5.624-5.08c.244-.218-.054-.338-.377-.12L7.043 14.2l-2.97-.928c-.645-.202-.658-.645.135-.953l11.59-4.47c.537-.195 1.007.13.764.4z"/></svg>
           ${t.success_cta}
